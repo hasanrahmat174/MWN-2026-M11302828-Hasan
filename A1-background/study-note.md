@@ -1,5 +1,5 @@
 # A1. Summary How to read
-<p style="text-align: justify;">
+<div align="justify">
 Researchers inevitably spend a lot of time reading scientific research journals. Researchers read journals to teach scientific 
 knowledge from journals, convey it to students in classes or conferences, or to update their own knowledge. Most researchers 
 waste time and effort because they cannot read research journals effectively and efficiently. Postgraduate researchers often use trial 
@@ -13,5 +13,5 @@ starting from the beginning and working your way through. The first step gives y
 The second step gives you a grasp of the journal's content, but not the details. The third step gives you a complete understanding. 
 Reading journals using the THREE-PASS APPROACH method can help you understand journals more efficiently and conduct 
 a literature survey to ensure you understand everything.
-</p>
+</div>
 
