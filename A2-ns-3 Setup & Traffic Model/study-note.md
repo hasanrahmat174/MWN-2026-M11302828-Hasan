@@ -1,4 +1,4 @@
-# A2: ns-3 Setup & Traffic Model
+<img width="786" height="381" alt="image" src="https://github.com/user-attachments/assets/8cd4f7e8-494c-474c-9453-9ee264644b58" /># A2: ns-3 Setup & Traffic Model
 
 **Course:** Multimedia Wireless Networks (ET5907701), Fall 2026 · **Student:** Rahmat Munir Hasan (M11302828) · **Path:** Advanced · **Presentation:** Week 7, 10 minutes
 
@@ -135,9 +135,12 @@ void StopApplication() override
 }
 ```
 
-## 2. Traffic Model (3GPP TR 26.926)
+## 2. Traffic Model 
+<img width="786" height="381" alt="image" src="https://github.com/user-attachments/assets/7c2295ac-ebcc-4dbf-bc14-087a15765361" />
 
-The assignment names "TS 26.926", but 26.926 is a **Technical Report (TR)**: *Traffic Models and Quality Evaluation Methods for Media and XR Services in 5G Systems*. Its XR video traffic model is the one RAN1 defined for XR evaluations in TR 38.838 (Sec. 5.1.1, Table 5.1.1.1-1); 5G-LENA cites the same table.
+
+
+
 
 ### 2.1 The model
 
