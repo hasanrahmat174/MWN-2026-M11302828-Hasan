@@ -38,26 +38,25 @@ install ns-3 step by step :
 ```bash
 git clone https://gitlab.com/nsnam/ns-3-dev.git
 ```
-
-# CMake >= 3.25 for ns-3.48 (as joy)
-python3 -m pip install --user "cmake==3.31.6"
-echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc && export PATH=$HOME/.local/bin:$PATH
-
-# ns-3 + 5G-LENA, matching versions (README compatibility table of the nr module)
-git clone https://gitlab.com/nsnam/ns-3-dev.git ~/ns-3-dev
-cd ~/ns-3-dev && git checkout -b ns-3.48 ns-3.48
-cd contrib && git clone https://gitlab.com/cttc-lena/nr.git
-cd nr && git checkout -b 5g-lena-v5.1.y origin/5g-lena-v5.1.y
-
-# configure and build
-cd ~/ns-3-dev
-./ns3 configure --enable-examples --enable-tests 2>&1 | tee ~/a2-configure.log
-time nice -n 10 ./ns3 build -j4 2>&1 | tee ~/a2-build.log
-
-# smoke test
-./ns3 run hello-simulator
-./ns3 run cttc-nr-demo
+2. If you are content to work with the tip of the development tree; you need only to cd into ns-3-dev; the master branch is checked out by default.
+```bash
+cd ns-3-dev
 ```
+3. If instead you want to try the most recent release (version 3.45 as of this writing), you can checkout a branch corresponding to that git tag:
+```bash
+git checkout -b ns-3.45-branch ns-3.45
+```
+4. Building and testing
+Once you have obtained the source either by downloading a release or by cloning a Git repository, the next step is to configure the build using the CMake build system. The below commands make use of a Python wrapper around CMake, called ns3, that simplifies the command-line syntax, resembling Waf syntax. There are several options to control the build, but enabling the example programs and the tests, for a default build profile (with asserts enabled and and support for ns-3 logging) is what is usually done at first:
+```bash
+./ns3 configure --enable-examples --enable-tests
+```
+5. Then, use ns3 to build ns-3:
+```bash
+./ns3 build
+```
+6. last, you can try by your own self to run ns3 
+
 Configure result: `nr` is in "Modules configured to be built", `SQLite support : ON`, `Eigen3 support : ON`. Not built (not needed): brite, click, mpi, openflow, visualizer.
 
 ### 1.3 What broke
