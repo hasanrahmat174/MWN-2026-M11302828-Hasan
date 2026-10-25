@@ -1,6 +1,6 @@
 # A2: ns-3 Setup & Traffic Model
 
-**Course:** Multimedia Wireless Networks (ET5907701), Fall 2026 · **Student:** Petrajoy Davidson (M11502803) · **Path:** Advanced · **Presentation:** Week 7, 10 minutes
+**Course:** Multimedia Wireless Networks (ET5907701), Fall 2026 · **Student:** Rahmat Munir Hasan (M11302828) · **Path:** Advanced · **Presentation:** Week 7, 10 minutes
 
 **One-line take-away:** ns-3.48 + 5G-LENA v5.1 runs on my lab VM, and my first scenario is already the testbed of my project: a slice intent sets the bandwidth of two NR slices, slice A carries 3GPP XR video that I generate and verify against the model, and FlowMonitor tells whether slice B still meets its SLA.
 
