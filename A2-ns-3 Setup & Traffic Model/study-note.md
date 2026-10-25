@@ -39,7 +39,7 @@ for the first, we need to install ns-3
 a-build ccache git pkg-config python3 python3-dev python3-pip \
   libc6-dev sqlite3 libsqlite3-dev libeigen3-dev \
   python3-numpy python3-pandas python3-matplotlib python3-scipy
-
+```
 
 # CMake >= 3.25 for ns-3.48 (as joy)
 python3 -m pip install --user "cmake==3.31.6"
