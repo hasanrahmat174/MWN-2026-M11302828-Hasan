@@ -136,6 +136,7 @@ void StopApplication() override
 ## 2. Traffic Model 
 <img width="786" height="381" alt="image" src="https://github.com/user-attachments/assets/7c2295ac-ebcc-4dbf-bc14-087a15765361" />
 
+<img width="805" height="412" alt="image" src="https://github.com/user-attachments/assets/054a3e33-f678-4687-83b0-bf10b46cdeb7" />
 
 
 
