@@ -98,7 +98,15 @@ python3 analysis/packet_size_density_pdf_cdf.py \
 ```
 
 ### 1.3 What broke
-  > `no member named 'Install' in 'ns3::Ipv4AddressHelper'`
+  > `/home/rahmat/ns-3/scratch/traffic-gaussian.cc: In member function ‘virtual void GaussianUdpApp::StopApplication()’:
+/home/rahmat/ns-3/scratch/traffic-gaussian.cc:49:17: error: ‘class ns3::EventId’ has no member named ‘IsRunning’; did you mean ‘IsPending’?
+   49 |     if (m_event.IsRunning()) Simulator::Cancel(m_event);
+      |                 ^~~~~~~~~
+      |                 IsPending
+gmake[3]: *** [scratch/CMakeFiles/scratch_traffic-gaussian.dir/build.make:81: scratch/CMakeFiles/scratch_traffic-gaussian.dir/traffic-gaussian.cc.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4692: scratch/CMakeFiles/scratch_traffic-gaussian.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4698: scratch/CMakeFiles/scratch_traffic-gaussian.dir/rule] Error 2
+gmake: *** [Makefile:1470: scratch_traffic-gaussian] Error 2`
 
 ## 2. Traffic Model (3GPP TR 26.926)
 
