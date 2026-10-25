@@ -39,7 +39,7 @@ for the first, we need to install ns-3
 a-build ccache git pkg-config python3 python3-dev python3-pip \
   libc6-dev sqlite3 libsqlite3-dev libeigen3-dev \
   python3-numpy python3-pandas python3-matplotlib python3-scipy
-```
+
 
 # CMake >= 3.25 for ns-3.48 (as joy)
 python3 -m pip install --user "cmake==3.31.6"
@@ -59,7 +59,7 @@ time nice -n 10 ./ns3 build -j4 2>&1 | tee ~/a2-build.log
 # smoke test
 ./ns3 run hello-simulator
 ./ns3 run cttc-nr-demo
-
+```
 Configure result: `nr` is in "Modules configured to be built", `SQLite support : ON`, `Eigen3 support : ON`. Not built (not needed): brite, click, mpi, openflow, visualizer.
 
 ### 1.3 What broke
