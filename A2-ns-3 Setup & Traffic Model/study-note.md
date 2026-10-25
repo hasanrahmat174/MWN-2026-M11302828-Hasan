@@ -32,11 +32,11 @@ I use an Asus TUF laptop, my operating system is Ubuntu 26. I use NS-3 with vers
 
 ### 1.2 Install steps
 
-Run as the normal user (`joy`), inside `tmux` so a dropped SSH session does not stop the build.
+for the first, we need to install ns-3
 
 ```bash
 # dependencies (as root)
-apt-get install -y g++ cmake ninja-build ccache git pkg-config python3 python3-dev python3-pip \
+a-build ccache git pkg-config python3 python3-dev python3-pip \
   libc6-dev sqlite3 libsqlite3-dev libeigen3-dev \
   python3-numpy python3-pandas python3-matplotlib python3-scipy
 
