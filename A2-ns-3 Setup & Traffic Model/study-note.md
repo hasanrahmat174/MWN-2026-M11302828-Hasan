@@ -97,9 +97,6 @@ python3 analysis/packet_size_density_pdf_cdf.py \
   --kde
 ```
 
-
-Configure result: `nr` is in "Modules configured to be built", `SQLite support : ON`, `Eigen3 support : ON`. Not built (not needed): brite, click, mpi, openflow, visualizer.
-
 ### 1.3 What broke
 
 | # | Symptom | Cause | Fix |
