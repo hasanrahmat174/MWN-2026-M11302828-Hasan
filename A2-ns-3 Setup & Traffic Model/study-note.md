@@ -31,9 +31,8 @@
 I use an Asus TUF laptop, my operating system is Ubuntu 26. I use NS-3 with version 3.8, Wireshark version 4.6.9, Python version 3.15.0, C++ version 14
 
 ### 1.2 Install steps
+1.2.1 for the first, we need to install ns-3install ns-3 step by step : 
 
-for the first, we need to install ns-3
-install ns-3 step by step : 
 1. Download ns-3 with git clone 
 ```bash
 git clone https://gitlab.com/nsnam/ns-3-dev.git
@@ -56,6 +55,48 @@ Once you have obtained the source either by downloading a release or by cloning 
 ./ns3 build
 ```
 6. last, you can try by your own self to run ns3 
+
+1.2.2 for the second, install wireshark : 
+1. completely installation 
+```bash
+sudo apt update
+sudo apt install wireshark
+sudo usermod -aG wireshark $USER
+```
+1.2.3 for the third run ns-3 to generate pdf and cdf 
+
+1. Run traffic-gaussian  
+```bash
+./ns3 run "scratch/traffic-gaussian \
+  --packets=1000 \
+  --payloadBytes=512 \
+  --meanIat=0.030 \
+  --stdIat=0.010 \
+  --minIat=0.005 \
+  --maxIat=0.080 \
+  --simStop=45 \
+  --prefix=traffic"
+```
+
+2. Run wireshark simulation  
+```bash
+wireshark traffic-0-0.pcap
+```
+
+3. generated pdf and cdf vs interval time
+```bash
+python3 analysis/analyze_interarrival.py \
+  --pcap traffic-0-0.pcap \
+  --out results
+```
+4. generated pdf and cdf vs packet size 
+```bash
+python3 analysis/packet_size_density_pdf_cdf.py \
+  --pcap traffic-0-0.pcap \
+  --out results2 \
+  --kde
+```
+
 
 Configure result: `nr` is in "Modules configured to be built", `SQLite support : ON`, `Eigen3 support : ON`. Not built (not needed): brite, click, mpi, openflow, visualizer.
 
