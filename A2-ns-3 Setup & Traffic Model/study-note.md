@@ -109,6 +109,8 @@ gmake[3]: *** [scratch/CMakeFiles/scratch_traffic-gaussian.dir/build.make:81: sc
 gmake[2]: *** [CMakeFiles/Makefile2:4692: scratch/CMakeFiles/scratch_traffic-gaussian.dir/all] Error 2
 gmake[1]: *** [CMakeFiles/Makefile2:4698: scratch/CMakeFiles/scratch_traffic-gaussian.dir/rule] Error 2
 gmake: *** [Makefile:1470: scratch_traffic-gaussian] Error 2`
+> 
+
 Solved : 
 first, Open file traffic-gaussian and Look for the StopApplication() function which contains the following code:
 ```bash
