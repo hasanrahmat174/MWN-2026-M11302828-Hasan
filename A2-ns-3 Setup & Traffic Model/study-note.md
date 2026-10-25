@@ -1,5 +1,3 @@
-<img width="786" height="381" alt="image" src="https://github.com/user-attachments/assets/8cd4f7e8-494c-474c-9453-9ee264644b58" /># A2: ns-3 Setup & Traffic Model
-
 **Course:** Multimedia Wireless Networks (ET5907701), Fall 2026 · **Student:** Rahmat Munir Hasan (M11302828) · **Path:** Advanced · **Presentation:** Week 7, 10 minutes
 
 > [!NOTE]
