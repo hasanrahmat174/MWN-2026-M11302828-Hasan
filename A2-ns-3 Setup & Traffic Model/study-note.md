@@ -33,12 +33,10 @@ I use an Asus TUF laptop, my operating system is Ubuntu 26. I use NS-3 with vers
 ### 1.2 Install steps
 
 for the first, we need to install ns-3
-
+install ns-3 step by step : 
+1. Download ns-3 with git clone 
 ```bash
-# dependencies (as root)
-a-build ccache git pkg-config python3 python3-dev python3-pip \
-  libc6-dev sqlite3 libsqlite3-dev libeigen3-dev \
-  python3-numpy python3-pandas python3-matplotlib python3-scipy
+git clone https://gitlab.com/nsnam/ns-3-dev.git
 ```
 
 # CMake >= 3.25 for ns-3.48 (as joy)
