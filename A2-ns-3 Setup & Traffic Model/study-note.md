@@ -2,6 +2,10 @@
 
 **Course:** Multimedia Wireless Networks (ET5907701), Fall 2026 · **Student:** Rahmat Munir Hasan (M11302828) · **Path:** Advanced · **Presentation:** Week 7, 10 minutes
 
+> [!NOTE]
+> **Rahmat Munir Hasan**  
+> M11302828
+
 ## Table of Contents
 
 1. [Setup](#1-setup)
