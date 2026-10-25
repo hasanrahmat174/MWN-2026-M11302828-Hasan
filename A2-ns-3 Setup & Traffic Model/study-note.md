@@ -143,6 +143,12 @@ void StopApplication() override
 
 ### 3. Running the model
 
+after run traffic-gaussian. there is traffic-0-0.pcap and traffic-1-0.pcap .pcap for analyze with wireshark(open): 
+
+<img width="970" height="758" alt="Task 1_Wireshark simulation" src="https://github.com/user-attachments/assets/73d9ec7e-1541-42ae-ab7d-ddd1f43c1763" />
+
+
+
 Single-stream DL XR / cloud video, one stream per UE:
 
 | Parameter | Model | My default |
