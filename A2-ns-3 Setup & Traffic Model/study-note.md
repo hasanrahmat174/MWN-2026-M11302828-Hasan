@@ -28,19 +28,7 @@
 
 ### 1.1 Platform and versions
 
-| Item | Value |
-| --- | --- |
-| Machine | Lab VM `joy` (8 vCPU, 16 GiB RAM, ~500 GB disk), shared with my O2/k8s lab work |
-| OS | Ubuntu 22.04.4 LTS, kernel 5.15.0-190-generic |
-| ns-3 | `ns-3.48` (tag) |
-| NR module | 5G-LENA `5g-lena-v5.1.y` (branch), the release paired with ns-3.48 |
-| Compiler | g++ 11.4 (ns-3.48 needs g++ ≥ 11.1) |
-| CMake | 3.31.6 from pip, user-level (system CMake 3.22.1 is too old, see 1.3) |
-| Python | 3.10 (ns-3.48 needs ≥ 3.10) |
-| Build | `default` profile (debug + optimisation), examples and tests on, `-j4` |
-| Build time | 53 min 28 s wall clock for 2 389 targets (`-j4`, niced, VM shared with k8s); my scenario then compiled first time |
-
-**Why the VM and not my laptop:** the laptop is Windows without WSL. ns-3 is developed and tested on Linux, the VM already runs Ubuntu 22.04 with 8 cores, and it is the same machine I use for the O-RAN lab, so the project and the simulator live in one place.
+I use an Asus TUF laptop, my operating system is Ubuntu 26. I use NS-3 with version 3.8, Wireshark version 4.6.9, Python version 3.15.0, C++ version 14
 
 ### 1.2 Install steps
 
