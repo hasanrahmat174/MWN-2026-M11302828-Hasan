@@ -81,7 +81,7 @@ sudo usermod -aG wireshark $USER
 wireshark traffic-0-0.pcap
 ```
 
-3. generated pdf and cdf vs interval time
+3. generated pdf and cdf vs inter-arival time
 ```bash
 python3 analysis/analyze_interarrival.py \
   --pcap traffic-0-0.pcap \
@@ -147,9 +147,30 @@ after run traffic-gaussian. there is traffic-0-0.pcap and traffic-1-0.pcap .pcap
 
 <img width="970" height="758" alt="Task 1_Wireshark simulation" src="https://github.com/user-attachments/assets/73d9ec7e-1541-42ae-ab7d-ddd1f43c1763" />
 
+to get graph pdf and cdf versus packet size and inter-arival time, it can generated from Task 1_analyze_interarrival.py and Task 1_packet_size_density_pdf_cdf.py with traffic-gaussian, the result : 
+
+1. PDF with inter-arival time
+
+<img width="1024" height="768" alt="Task 1_inter_arrival_pdf" src="https://github.com/user-attachments/assets/effe7b37-203a-4442-a9f4-bdf0f7b147b6" />
+
+2. CDF with inter-arival time
+
+   <img width="1024" height="768" alt="Task 1_inter_arrival_cdf" src="https://github.com/user-attachments/assets/f1674953-dedc-4860-99f3-65f2412d557d" />
+
+3. PDF with Packet size
+
+   <img width="1280" height="800" alt="Task 1_packet_size_pdf" src="https://github.com/user-attachments/assets/31a4b089-f1a8-4fce-a50b-1bcae4ec3c20" />
+ 
+4. CDF with Packet size
+
+<img width="1280" height="800" alt="Task 1_packet_size_cdf" src="https://github.com/user-attachments/assets/a85180cf-fa9e-4190-9749-414dfb1cbba6" />
 
 
-Single-stream DL XR / cloud video, one stream per UE:
+
+
+
+
+
 
 | Parameter | Model | My default |
 | --- | --- | --- |
