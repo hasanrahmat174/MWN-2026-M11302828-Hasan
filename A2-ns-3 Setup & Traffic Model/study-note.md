@@ -141,7 +141,7 @@ void StopApplication() override
 
 
 
-### 2.1 The model
+### 3. Running the model
 
 Single-stream DL XR / cloud video, one stream per UE:
 
