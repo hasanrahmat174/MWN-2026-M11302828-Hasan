@@ -98,13 +98,7 @@ python3 analysis/packet_size_density_pdf_cdf.py \
 ```
 
 ### 1.3 What broke
-
-| # | Symptom | Cause | Fix |
-| --- | --- | --- | --- |
-| 1 | `Exception: Refusing to run as root` from `./ns3 configure` | I cloned and ran everything in a root shell; ns-3 refuses to build as root on purpose | `mv /root/ns-3-dev /home/joy/ && chown -R joy:joy /home/joy/ns-3-dev`, then work as `joy` |
-| 2 | `CMake 3.25..3.25 or higher is required. You are running version 3.22.1` | ns-3.48 raised the CMake minimum from 3.20 to 3.25; Ubuntu 22.04 ships 3.22 | user-level CMake 3.31.6 from pip, first on `PATH`; then `rm -rf cmake-cache` and configure again. Pinned 3.x rather than CMake 4, which drops old `cmake_minimum_required` syntax |
-| 3 | 5G-LENA README install commands still say `ns-3.46` / `5g-lena-v4.1.1` | README text not updated; its compatibility table is | followed the table: v5.1.y ↔ ns-3.48 |
-| 4 | Wireshark shows slice A packets as protocol "TAPA", `Tunnel - V=0, T=Type 0` | UDP port 5000 is registered to the Trapeze Access Point Access protocol, so Wireshark guesses that dissector | Analyze → Enabled Protocols → untick TAPA (`tshark --disable-protocol tapa`); the packets then show as plain UDP `→ 5000 Len=1400` |
+  > `no member named 'Install' in 'ns3::Ipv4AddressHelper'`
 
 ## 2. Traffic Model (3GPP TR 26.926)
 
