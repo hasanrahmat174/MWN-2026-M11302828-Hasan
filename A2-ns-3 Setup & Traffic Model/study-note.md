@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [1. Setup]
+- [1. Setup](#1-setup)
   - [1.1 Platform and Software Versions](#11-platform-and-software-versions)
   - [1.2 Installation Steps](#12-installation-steps)
     - [1.2.1 Installing NS-3](#121-installing-ns-3)
@@ -52,6 +52,7 @@
   - [4.7 Recommendations for Further Statistical Validation](#47-recommendations-for-further-statistical-validation)
 
 - [5. References](#5-references)
+  
 ## 1. Setup
 
 ### 1.1 Platform and versions
