@@ -6,52 +6,52 @@
 
 ## Table of Contents
 
-1. Setup
-1.1 Platform and Software Versions
-1.2 Installation Steps
- 1.2.1 Installing NS-3
- 1.2.2 Installing Wireshark
- 1.2.3 Running NS-3 to Generate PDF and CDF Graphs
-1.3 Troubleshooting and Solutions
- 1.3.1 Resolving the EventId::IsRunning() Compilation Error
-   
-2. Traffic Model
+- [1. Setup](#1-setup)
+  - [1.1 Platform and Software Versions](#11-platform-and-software-versions)
+  - [1.2 Installation Steps](#12-installation-steps)
+    - [1.2.1 Installing NS-3](#121-installing-ns-3)
+    - [1.2.2 Installing Wireshark](#122-installing-wireshark)
+    - [1.2.3 Running NS-3 to Generate PDF and CDF Graphs](#123-running-ns-3-to-generate-pdf-and-cdf-graphs)
+  - [1.3 Troubleshooting and Solutions](#13-troubleshooting-and-solutions)
+    - [1.3.1 Resolving the `EventId::IsRunning()` Compilation Error](#131-resolving-the-eventidisrunning-compilation-error)
 
-3. Running the Model
-3.1 Running the Gaussian Traffic Generator
-3.2 Generating PCAP Files
-3.3 Analyzing Network Traffic Using Wireshark
-3.4 Generating PDF and CDF Graphs Using Python
- 3.4.1 PDF of Inter-Arrival Times
- 3.4.2 CDF of Inter-Arrival Times
- 3.4.3 PDF of Packet Sizes
- 3.4.4 CDF of Packet Sizes
+- [2. Traffic Model](#2-traffic-model)
 
-4. Analysis
-4.1 Comprehensive Analysis of Gaussian Traffic Simulation
-4.2 Analysis of the Inter-Arrival Time CDF
- 4.2.1 Interpretation of the Axes
- 4.2.2 Observed Results
- 4.2.3 Statistical Interpretation
- 4.2.4 Simulation Validation
-4.3 Analysis of the Inter-Arrival Time PDF
- 4.3.1 Interpretation of the Axes
- 4.3.2 Observed Results
- 4.3.3 Comparison with the Truncated Gaussian Distribution
- 4.3.4 Histogram Validation
-4.4 Analysis of the Packet Size CDF
- 4.4.1 Interpretation of the Axes
- 4.4.2 Observed Results
- 4.4.3 Calculation of Packet Size
- 4.4.4 Interpretation of the Results
-4.5 Analysis of the Packet Size PDF
- 4.5.1 Interpretation of the Axes
- 4.5.2 Observed Results
- 4.5.3 Probability Mass Distribution
-4.6 Overall Results and Discussion
-4.7 Recommendations for Further Statistical Validation
+- [3. Running the Model](#3-running-the-model)
+  - [3.1 Running the Gaussian Traffic Generator](#31-running-the-gaussian-traffic-generator)
+  - [3.2 Generating PCAP Files](#32-generating-pcap-files)
+  - [3.3 Analyzing Network Traffic Using Wireshark](#33-analyzing-network-traffic-using-wireshark)
+  - [3.4 Generating PDF and CDF Graphs Using Python](#34-generating-pdf-and-cdf-graphs-using-python)
+    - [3.4.1 PDF of Inter-Arrival Times](#341-pdf-of-inter-arrival-times)
+    - [3.4.2 CDF of Inter-Arrival Times](#342-cdf-of-inter-arrival-times)
+    - [3.4.3 PDF of Packet Sizes](#343-pdf-of-packet-sizes)
+    - [3.4.4 CDF of Packet Sizes](#344-cdf-of-packet-sizes)
 
-5. References
+- [4. Analysis](#4-analysis)
+  - [4.1 Comprehensive Analysis of Gaussian Traffic Simulation](#41-comprehensive-analysis-of-gaussian-traffic-simulation)
+  - [4.2 Analysis of the Inter-Arrival Time CDF](#42-analysis-of-the-inter-arrival-time-cdf)
+    - [4.2.1 Interpretation of the Axes](#421-interpretation-of-the-axes)
+    - [4.2.2 Observed Results](#422-observed-results)
+    - [4.2.3 Statistical Interpretation](#423-statistical-interpretation)
+    - [4.2.4 Simulation Validation](#424-simulation-validation)
+  - [4.3 Analysis of the Inter-Arrival Time PDF](#43-analysis-of-the-inter-arrival-time-pdf)
+    - [4.3.1 Interpretation of the Axes](#431-interpretation-of-the-axes)
+    - [4.3.2 Observed Results](#432-observed-results)
+    - [4.3.3 Comparison with the Truncated Gaussian Distribution](#433-comparison-with-the-truncated-gaussian-distribution)
+    - [4.3.4 Histogram Validation](#434-histogram-validation)
+  - [4.4 Analysis of the Packet Size CDF](#44-analysis-of-the-packet-size-cdf)
+    - [4.4.1 Interpretation of the Axes](#441-interpretation-of-the-axes)
+    - [4.4.2 Observed Results](#442-observed-results)
+    - [4.4.3 Calculation of Packet Size](#443-calculation-of-packet-size)
+    - [4.4.4 Interpretation of the Results](#444-interpretation-of-the-results)
+  - [4.5 Analysis of the Packet Size PDF](#45-analysis-of-the-packet-size-pdf)
+    - [4.5.1 Interpretation of the Axes](#451-interpretation-of-the-axes)
+    - [4.5.2 Observed Results](#452-observed-results)
+    - [4.5.3 Probability Mass Distribution](#453-probability-mass-distribution)
+  - [4.6 Overall Results and Discussion](#46-overall-results-and-discussion)
+  - [4.7 Recommendations for Further Statistical Validation](#47-recommendations-for-further-statistical-validation)
+
+- [5. References](#5-references)
 ## 1. Setup
 
 ### 1.1 Platform and versions
