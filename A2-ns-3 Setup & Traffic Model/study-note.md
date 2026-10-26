@@ -350,7 +350,11 @@ B. Observed results
 The entire probability mass is concentrated at:
 
 <img width="132" height="31" alt="image" src="https://github.com/user-attachments/assets/f6eb5163-09b8-449e-8c89-07b097b51d0d" />
+
+
 Therefore:
+
+
 
 <img width="166" height="187" alt="image" src="https://github.com/user-attachments/assets/af07bcc5-999f-4261-a20c-a623c63a0499" />
 
