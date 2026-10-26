@@ -169,49 +169,142 @@ to get graph pdf and cdf versus packet size and inter-arival time, it can genera
 
 Comprehensive Analysis of Four Graphs from the Gaussian Traffic Simulation in ns-3
 Based on the four uploaded graphs, the simulation demonstrates two different traffic characteristics:
-- Inter-arrival time (IAT): Varies and exhibits a pattern resembling a Gaussian distribution.
-- Packet size: Remains constant at 540 bytes, resulting in a distribution concentrated at a single value.
+ 
+ - Inter-arrival time (IAT): Varies and exhibits a pattern resembling a Gaussian distribution.
+ - Packet size: Remains constant at 540 bytes, resulting in a distribution concentrated at a single value.
+
 Overall, these graphs indicate that the traffic generator successfully produces variations in packet arrival times while maintaining a fixed packet size. However, statistical conformity to a truncated Gaussian distribution and validity as a 3GPP traffic model still require additional verification.
+
 1. Analysis of the Inter-arrival Time CDF
 Graph 1 — Inter-arrival Time CDF (PCAP)
 
 The first graph presents the Empirical Cumulative Distribution Function (ECDF) of inter-arrival times obtained from the PCAP data.
+
 A. Interpretation of the axes
 - X-axis: Inter-arrival time in milliseconds (ms).
 - Y-axis: Cumulative probability, ranging from 0 to 1.
 The CDF represents the probability that the inter-arrival time is less than or equal to a particular value.
-\[
-F(x)=P(IAT\leq x)
-\]
+
+<img width="191" height="56" alt="image" src="https://github.com/user-attachments/assets/c2e4cbbd-d3f6-424c-a8f6-8c69ee9ad973" />
 
 B. Observed results
 Based on the curve, the following values can be estimated:
-Parameter	Estimated value
-Minimum observed IAT	5–6 ms
-Median IAT	Approximately 30 ms
-25th percentile (P25)	Approximately 22–23 ms
-75th percentile (P75)	Approximately 36–37 ms
-90th percentile (P90)	Approximately 43 ms
-95th percentile (P95)	Approximately 47 ms
-Maximum observed IAT	Approximately 63 ms
+Parameter	                                  Estimated value
+Minimum observed                              IAT	5–6 ms
+Median IAT	                                  Approximately 30 ms
+25th percentile (P25)	                      Approximately 22–23 ms
+75th percentile (P75)	                      Approximately 36–37 ms
+90th percentile (P90)	                      Approximately 43 ms
+95th percentile (P95)	                      Approximately 47 ms
+Maximum observed IAT	                         Approximately 63 ms
 
 These values are estimated visually from the graph rather than calculated directly from the CSV data.
+
 C. Statistical interpretation
 The CDF exhibits an S-shaped curve, with its steepest increase occurring approximately between 25 and 35 ms.
-
 This indicates that:
+
 - Most packets have inter-arrival times close to 30 ms.
 - Approximately 50% of the inter-arrival times are less than or equal to 30 ms.
 - Approximately 90% of the inter-arrival times are less than or equal to 43 ms.
 - Only a small proportion of intervals exceed 50 ms.
 This shape is consistent with a probability distribution concentrated around its central value.
+
 D. Was the simulation successful?
 Yes, from a visual perspective, the graph demonstrates that the inter-arrival times vary and that the cumulative distribution has been generated correctly.
 
 However, the S-shaped curve alone does not prove that the data follow a truncated Gaussian distribution. Additional statistical validation is required.
 
+2. Analysis of the Inter-arrival Time PDF
+Graph 2 — Inter-arrival Time PDF (PCAP)
 
+The second graph presents a probability density histogram of the inter-arrival times.
 
+A. Interpretation of the axes
+ - X-axis: Inter-arrival time (ms).
+ - Y-axis: Probability density (1/ms).
+The values on the Y-axis represent probability density rather than direct probability.
+
+The probability of an inter-arrival time falling within a particular interval is determined by the area under the probability density function.
+
+<img width="265" height="75" alt="image" src="https://github.com/user-attachments/assets/7a24c03e-fe56-42bb-ba26-e0da622b2bed" />
+
+B. Observed results
+Parameter	                                 Estimated value
+Distribution peak (mode)      	          Approximately 30–32 ms
+Maximum probability density	             Approximately 0.043 per ms
+Observed IAT range	                      Approximately 5–63 ms
+High-density interval	                   Approximately 20–40 ms
+Distribution shape	                      Unimodal, approximately bell-shaped
+
+The histogram shows a single dominant peak near 30 ms, followed by decreasing probability density toward shorter and longer inter-arrival times.
+
+C. Relationship with the truncated Gaussian distribution
+The previous traffic generator configuration used the following parameters:
+
+<img width="312" height="112" alt="image" src="https://github.com/user-attachments/assets/c49d0ad9-360f-4717-bf09-158bda8d27d2" />
+
+The graph shows a peak near 30 ms, which is consistent with the expected center of the distribution.
+
+The observed inter-arrival times extend only to approximately 63 ms, even though the configured maximum is 80 ms.
+
+This does not necessarily indicate an error. The truncation boundaries define the permitted range of values, but a finite simulation does not have to produce samples exactly at those boundaries.
+
+D. Is the histogram correct?
+Visually, the histogram exhibits a reasonable distribution for Gaussian-based inter-arrival times.
+
+However, three additional validation steps are recommended for research purposes:
+ 1. Compare the empirical histogram with the theoretical truncated Gaussian PDF.
+ 2. Calculate the empirical mean and standard deviation directly from the CSV data.
+ 3. Compare the empirical CDF with the theoretical CDF, for example, using the Kolmogorov–Smirnov statistic.
+These procedures would support the conclusion that the traffic generator follows the intended truncated Gaussian distribution, rather than relying solely on the visual appearance of the histogram.
+
+3. Analysis of the Packet Size CDF
+Graph 3 — Empirical CDF of Packet Sizes
+
+The third graph differs significantly from the inter-arrival time graphs.
+The packet size CDF consists of a single vertical line at 540 bytes.
+
+A. Interpretation of the axes
+- X-axis: Packet size (bytes).
+- Y-axis: Cumulative probability.
+  
+B. Observed results
+The graph indicates that:
+
+<img width="142" height="47" alt="image" src="https://github.com/user-attachments/assets/75f1586c-fc13-4463-b99e-42582f42c267" />
+
+This means that 100% of the analyzed packets have a size of 540 bytes.
+The empirical CDF can therefore be expressed as:
+
+<img width="217" height="72" alt="image" src="https://github.com/user-attachments/assets/e5364ff9-52e3-4fb9-b013-4abd7fa2cdcd" />
+
+In other words:
+ - For packet sizes smaller than 540 bytes, the cumulative probability is 0.
+ - At 540 bytes, the cumulative probability immediately increases to 1.
+ - For packet sizes greater than 540 bytes, the cumulative probability remains 1.
+
+C. Why is the packet size 540 bytes?
+
+Based on the previous simulation configuration:
+Component	                        Size
+UDP payload	                     512 bytes
+UDP header	                       8 bytes
+IPv4 header	                      20 bytes
+Total IPv4 packet size	         540 bytes
+
+The packet size is calculated as:
+
+<img width="300" height="42" alt="image" src="https://github.com/user-attachments/assets/d4235761-f6d0-48d9-9a87-09268739471c" />
+
+This calculation matches the packet size shown in the graph, assuming a standard IPv4 header without additional options.
+
+D. Interpretation of the results
+The packet size CDF is mathematically correct if every analyzed packet has the same size.
+
+However, the graph does not demonstrate packet size variability.
+
+Therefore, the result is insufficient for evaluating a variable packet size distribution, such as those used in certain XR traffic models.
 
 
 
