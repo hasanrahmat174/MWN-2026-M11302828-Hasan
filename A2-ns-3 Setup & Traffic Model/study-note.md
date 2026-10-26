@@ -277,14 +277,7 @@ The graph indicates that:
 This means that 100% of the analyzed packets have a size of 540 bytes.
 The empirical CDF can therefore be expressed as:
 
-<div style="text-align: center;">
-  <img
-    width="217"
-    height="72"
-    alt="image"
-    src="https://github.com/user-attachments/assets/e5364ff9-52e3-4fb9-b013-4abd7fa2cdcd"
-  />
-</div>
+<img width="217" height="72" alt="5" src="https://github.com/user-attachments/assets/310d7c3c-92ea-4c8c-b089-a3e982fe171f" />
 
 In other words:
  - For packet sizes smaller than 540 bytes, the cumulative probability is 0.
