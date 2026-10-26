@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [1. Setup](#1-setup)
+- [1. Setup]
   - [1.1 Platform and Software Versions](#11-platform-and-software-versions)
   - [1.2 Installation Steps](#12-installation-steps)
     - [1.2.1 Installing NS-3](#121-installing-ns-3)
