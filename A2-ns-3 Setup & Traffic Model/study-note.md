@@ -307,8 +307,24 @@ However, the graph does not demonstrate packet size variability.
 Therefore, the result is insufficient for evaluating a variable packet size distribution, such as those used in certain XR traffic models.
 
 
+4. Analysis of the Packet Size PDF
+Graph 4 — Packet Size Distribution (Single Size)
+The fourth graph illustrates the packet size distribution using a single vertical line at 540 bytes.
 
+A. Interpretation of the axes
+  - X-axis: Packet size (bytes).
+  - Y-axis: Probability mass.
+Unlike a continuous PDF histogram, this graph represents probability mass concentrated at one specific packet size.
 
+B. Observed results
+The entire probability mass is concentrated at:
+
+<img width="132" height="31" alt="image" src="https://github.com/user-attachments/assets/f6eb5163-09b8-449e-8c89-07b097b51d0d" />
+Therefore:
+
+<img width="166" height="187" alt="image" src="https://github.com/user-attachments/assets/af07bcc5-999f-4261-a20c-a623c63a0499" />
+
+These values apply to the analyzed packet data, assuming all observed packets have the same size, as indicated by the graph.
 
 ## 7. References
 
