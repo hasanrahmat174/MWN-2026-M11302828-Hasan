@@ -68,4 +68,20 @@ Explanation:
 The input parameters are used to test how the IEEE 802.11e EDCA mechanism affects voice traffic delivery. The number of stations and EDCA parameters affect a station's access to the transmission medium.
 
 ### 3. Output 
-Describes the network environment used in the research.
+Outputs are data obtained after the ns-3 simulation is run.
+| Output | Explanation |
+| --- | --- |
+| Packets Transmitted | Number of packets sent by the station |
+| Packets Received | Number of packets received by AP |
+| Total Received Bytes | Total size of data received by AP |
+| Packet Transmission Time | Packet transmission time|
+| Throughput Results | Throughput calculation results |
+| Delay Results| Delay calculation results |
+
+After the simulation is complete, ns-3 generates packet transmission and reception data. This data is used to determine the success of communication between the station and the AP.
+
+### 4. Performance Metrics
+Outputs are data obtained after the ns-3 simulation is run.
+\[
+Throughput = \frac{Received\ Data\ (bits)}{Simulation\ Time}
+\]
