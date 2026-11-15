@@ -81,7 +81,19 @@ Outputs are data obtained after the ns-3 simulation is run.
 After the simulation is complete, ns-3 generates packet transmission and reception data. This data is used to determine the success of communication between the station and the AP.
 
 ### 4. Performance Metrics
-Outputs are data obtained after the ns-3 simulation is run.
-\[
-Throughput = \frac{Received\ Data\ (bits)}{Simulation\ Time}
-\]
+Performance metrics are indicators used to evaluate network performance.
+The study used two main metrics:
+
+A. Average Throughput
+Measuring the average amount of data successfully received per unit of time.
+
+<img width="274" height="60" alt="image" src="https://github.com/user-attachments/assets/de44200f-801c-4aaa-ab49-a4467cfad63b" />
+
+Units: bps or Mbps. The higher the throughput, the greater the amount of data the AP can successfully receive per second.
+
+B. Average Delay
+Measuring the average time it takes for a packet to travel from the station to the AP.
+
+<img width="186" height="64" alt="image" src="https://github.com/user-attachments/assets/f2d005eb-9e55-461b-be7a-e09a80af74d3" />
+
+Units: ms. The lower the delay, the faster the packet is received by the AP.
