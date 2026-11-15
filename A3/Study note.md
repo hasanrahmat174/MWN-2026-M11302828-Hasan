@@ -150,6 +150,7 @@ The study used the following EDCA parameters:
 | AC_BE | 31 / 15 | 1023 / 1023	| 3 | 0 / 0 | 
 | AC_VI | 15 / 7 | 31 / 15| 2 | 6.016 / 3.008 ms | 
 | AC_VO | 7 / 3 | 15 / 7 | 2 | 3.264 / 1.504 ms | 
+
 These values ​​are the default EDCA parameters listed in the journal.
 
 ### 4. Simulation Time
