@@ -97,3 +97,55 @@ Measuring the average time it takes for a packet to travel from the station to t
 <img width="186" height="64" alt="image" src="https://github.com/user-attachments/assets/f2d005eb-9e55-461b-be7a-e09a80af74d3" />
 
 Units: ms. The lower the delay, the faster the packet is received by the AP.
+
+## 2. System Model 
+Following are the parameters that can be taken from the journal to reproduce the experiment.
+
+### 1. Topology 
+The research uses Wi-Fi Infrastructure Mode topology.
+| Parameter | Value |
+| --- | --- |
+| Network topology| Infrastructure Mode |
+| Access Point | 1 AP |
+| Number of stations | 2, 4, 6, 8, 10, 12 |
+| Communication | STA → AP|
+| Network architecture | Centralized AP|
+
+This means that one Access Point serves as the central hub for receiving data from multiple wireless stations. The number of stations was changed to determine the impact of user numbers on network performance.
+
+### 2. Traffic Model
+The research used Voice traffic with saturated traffic conditions.
+| Parameter | Value |
+| --- | --- |
+| Traffic type | Voice |
+| Traffic condition | Saturated |
+| Packet size | 1024 bytes |
+| Application rate | Physical rate / S|
+| Source start time | Random (1–5 seconds) |
+| Buffer size | 256 packets|
+| Beacon interval | 0.02 seconds |
+
+Description:
+- Voice: Traffic consists of voice data.
+- Saturated traffic: Stations always have packets to send.
+- Packet size: Each packet is 1024 bytes.
+- Application rate: Application speed is calculated by dividing the physical rate by the number of stations (S).
+- Source start time: The transmission start time is randomly generated between 1–5 seconds.
+
+### 2. PHY/MAC Parameters
+- PHY (Physical Layer)
+| Parameter | Value |
+| --- | --- |
+| Wireless standard | 	IEEE 802.11b dan 802.11g |
+| Data rate 802.11b | 11 Mbps |
+| Data rate 802.11g | 54 Mbps |
+
+- MAC (Medium Access Control)
+The study used the following EDCA parameters:
+
+| Access Category | CWmin (802.11b / g) | CWmax (802.11b / g) | AIFSN | TXOP (802.11b / g) | 
+| --- | --- |
+| AC_BK | 31 / 15 | 1023 / 1023	| 7 | 0 / 0 | 
+| AC_BE | 31 / 15 | 1023 / 1023	| 3 | 0 / 0 | 
+| AC_VI | 15 / 7 | 31 / 15| 2 | 6.016 / 3.008 ms | 
+| AC_VO | 7 / 3 | 15 / 7 | 2 | 3.264 / 1.504 ms | 
