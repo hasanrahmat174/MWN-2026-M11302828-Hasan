@@ -132,7 +132,7 @@ Description:
 - Application rate: Application speed is calculated by dividing the physical rate by the number of stations (S).
 - Source start time: The transmission start time is randomly generated between 1–5 seconds.
 
-### 2. PHY/MAC Parameters
+### 3. PHY/MAC Parameters
 - PHY (Physical Layer)
 
 | Parameter | Value |
@@ -150,3 +150,20 @@ The study used the following EDCA parameters:
 | AC_BE | 31 / 15 | 1023 / 1023	| 3 | 0 / 0 | 
 | AC_VI | 15 / 7 | 31 / 15| 2 | 6.016 / 3.008 ms | 
 | AC_VO | 7 / 3 | 15 / 7 | 2 | 3.264 / 1.504 ms | 
+These values ​​are the default EDCA parameters listed in the journal.
+
+### 4. Simulation Time
+
+| Parameter | Value |
+| --- | --- |
+| Simulation time | 4 minutes |
+| In seconds | 240 seconds |
+| Source start time | Random 1–5 seconds |
+
+This means that each experiment was run for 240 seconds.
+
+### 5. Seeds (Random Seed)
+
+The journal states that the station start time is generated randomly between 1–5 seconds.
+
+*Revise from A1**
