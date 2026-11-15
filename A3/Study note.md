@@ -19,3 +19,24 @@ The four traffic categories used in IEEE 802.11e are:
 - AC_BE: Best Effort
 - AC_BK: Background
 The EDCA mechanism uses CWmin, CWmax, AIFS, and TXOP parameters to differentiate traffic priorities.
+
+### 3. Challenges
+802.11 EDCA is fully implemented in OPNET. On the other hand, not all EDCA components are implemented in NS-3. NS-3 supports only the use of CWmin, CWmax, and AIFS. TXOP is considered to be a main component for EDCA but, unfortunately, it is not implemented in NS-31.
+In this work, we complete the NS-3 EDCA implementation by implementing the TXOP full functionalities. In order to
+implement TXOP in NS-3, many changes must be done to the current implementation and many testing is needed to verify the implementation correctness.
+
+## 2. System Model 
+
+### 1. Environment 
+Describes the network environment used in the research.
+
+| Parameter | Configuration |
+| --- | --- |
+| Network Simulator | ns-3 version 3.22 |
+| Network Type | 	Wireless LAN (WLAN) |
+| Network Topology | Infrastructure Mode |
+| Access Point | 1 AP |
+| Wireless Stations | 2, 4, 6, 8, 10, 12 |
+| Wireless Standard| IEEE 802.11b / 802.11g |
+| MAC Protocol | IEEE 802.11e EDCA |
+| Communication| Wireless Station → Access Point |
