@@ -144,7 +144,7 @@ Description:
 The study used the following EDCA parameters:
 
 | Access Category | CWmin (802.11b / g) | CWmax (802.11b / g) | AIFSN | TXOP (802.11b / g) | 
-| --- | --- |
+| --- | --- | --- | --- | --- | 
 | AC_BK | 31 / 15 | 1023 / 1023	| 7 | 0 / 0 | 
 | AC_BE | 31 / 15 | 1023 / 1023	| 3 | 0 / 0 | 
 | AC_VI | 15 / 7 | 31 / 15| 2 | 6.016 / 3.008 ms | 
