@@ -40,3 +40,32 @@ Describes the network environment used in the research.
 | Wireless Standard| IEEE 802.11b / 802.11g |
 | MAC Protocol | IEEE 802.11e EDCA |
 | Communication| Wireless Station → Access Point |
+
+Explanation:
+This study uses a WLAN network with one Access Point and several Wireless Stations. Each station sends data to the AP. The EDCA mechanism is used to prioritize channel access based on traffic category.
+
+### 2. Input 
+Describes the network environment used in the research.
+
+| Parameter | Configuration |
+| --- | --- |
+| Traffic Type | 	Voice |
+| Traffic Condition | Saturated Traffic |
+| Packet Size | 1024 bytes |
+| Access Point | 1 AP |
+| Application Rate | Physical Rate / Number of Stations |
+| Source Start Time| Random 1–5 seconds |
+| Buffer Size | 256 packets |
+| Beacon Interval| 0.02 seconds |
+| PHY Data Rate | 11 Mbps / 54 Mbps |
+| CWmin| Based on Access Category |
+| CWmax |Based on Access Category |
+| AIFSN| Based on Access Category |
+| TXOP | Based on Access Category |
+| Simulation Time| 240 seconds |
+
+Explanation:
+The input parameters are used to test how the IEEE 802.11e EDCA mechanism affects voice traffic delivery. The number of stations and EDCA parameters affect a station's access to the transmission medium.
+
+### 3. Output 
+Describes the network environment used in the research.
