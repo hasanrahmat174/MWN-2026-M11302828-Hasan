@@ -134,6 +134,7 @@ Description:
 
 ### 2. PHY/MAC Parameters
 - PHY (Physical Layer)
+
 | Parameter | Value |
 | --- | --- |
 | Wireless standard | IEEE 802.11b dan 802.11g |
