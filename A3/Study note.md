@@ -168,3 +168,10 @@ This means that each experiment was run for 240 seconds.
 The journal states that the station start time is generated randomly between 1–5 seconds.
 
 ## 3. Revise from A1 
+1. Changed the title from Analysis of the Influence of Bandwidth on QoS in IP Networks Using NS-3 to Analysis of the Influence of PHY Data Rate Variations on Quality of Service (QoS) in IEEE 802.11e-Based WLAN Networks Using NS-3.
+   
+2. References to the previous summary of the system model: Environment, Inputs, Outputs, Performance Metrics and experimental results of topology, traffic model, PHY/MAC parameters, simulation time, seeds were added to the final project.
+
+3. The research objective changes to the variation of PHY Data Rate on QoS in IEEE 802.11e-Based WLAN Networks Using NS-3 which has an impact on the following 4 parameters: throughput, jitter, delay, packet loss.
+
+
