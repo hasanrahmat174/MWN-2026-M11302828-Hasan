@@ -136,14 +136,14 @@ Description:
 - PHY (Physical Layer)
 | Parameter | Value |
 | --- | --- |
-| Wireless standard | 	IEEE 802.11b dan 802.11g |
+| Wireless standard | IEEE 802.11b dan 802.11g |
 | Data rate 802.11b | 11 Mbps |
 | Data rate 802.11g | 54 Mbps |
 
 - MAC (Medium Access Control)
 The study used the following EDCA parameters:
 
-| Access Category | CWmin (802.11b / g) | CWmax (802.11b / g) | AIFSN | TXOP (802.11b / g) | 
+| Access Category | CWmin (802.11b / g) | CWmax (802.11b / g) | AIFSN | TXOP (802.11b / g)| 
 | --- | --- | --- | --- | --- | 
 | AC_BK | 31 / 15 | 1023 / 1023	| 7 | 0 / 0 | 
 | AC_BE | 31 / 15 | 1023 / 1023	| 3 | 0 / 0 | 
