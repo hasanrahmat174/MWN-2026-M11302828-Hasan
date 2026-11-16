@@ -98,7 +98,7 @@ Measuring the average time it takes for a packet to travel from the station to t
 
 Units: ms. The lower the delay, the faster the packet is received by the AP.
 
-## 2. System Model 
+## 2. Experimental Result  
 Following are the parameters that can be taken from the journal to reproduce the experiment.
 
 ### 1. Topology 
