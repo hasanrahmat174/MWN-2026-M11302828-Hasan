@@ -98,7 +98,7 @@ Measuring the average time it takes for a packet to travel from the station to t
 
 Units: ms. The lower the delay, the faster the packet is received by the AP.
 
-## 2. Experimental Result  
+## 3. Experimental Result  
 Following are the parameters that can be taken from the journal to reproduce the experiment.
 
 ### 1. Topology 
@@ -167,7 +167,7 @@ This means that each experiment was run for 240 seconds.
 
 The journal states that the station start time is generated randomly between 1–5 seconds.
 
-## 3. Revise from A1 
+## 4. Revise from A1 
 1. Changed the title from Analysis of the Influence of Bandwidth on QoS in IP Networks Using NS-3 to Analysis of the Influence of PHY Data Rate Variations on Quality of Service (QoS) in IEEE 802.11e-Based WLAN Networks Using NS-3.
    
 2. References to the previous summary of the system model: Environment, Inputs, Outputs, Performance Metrics and experimental results of topology, traffic model, PHY/MAC parameters, simulation time, seeds were added to the final project.
