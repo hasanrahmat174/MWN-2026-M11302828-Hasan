@@ -3,7 +3,6 @@
 ## Repository Structure
 
 ```text
-MWN-2026-M11302832-Joshevan/
 ├── README.md
 ├── A1-background/
 │   ├── study-note.md
