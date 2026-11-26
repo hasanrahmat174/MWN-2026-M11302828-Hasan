@@ -247,8 +247,7 @@ The following four graphs are the images uploaded for this documentation. Values
 
 ### 7.1 Throughput versus PHY Data Rate
 
-<img width="2400" height="1500" alt="QoS_Throughput" src="https://github.com/user-attachments/assets/a7a11392-d55c-4dfa-ae41-7df532e2f4f3" />
-
+![Throughput versus PHY Data Rate](images/QoS_Throughput.png)
 
 **X-axis:** PHY Data Rate (Mbps)  
 **Y-axis:** Throughput (Mbps)
@@ -276,7 +275,7 @@ PHY Data Rate is the transmission speed at the physical layer, whereas throughpu
 
 ### 7.2 Delay versus PHY Data Rate
 
-<img width="2400" height="1500" alt="QoS_Delay" src="https://github.com/user-attachments/assets/c370bd6d-5177-4757-afdf-0b5357f09ee9" />
+![Delay versus PHY Data Rate](images/QoS_Delay.png)
 
 **X-axis:** PHY Data Rate (Mbps)  
 **Y-axis:** Average end-to-end delay (ms)
