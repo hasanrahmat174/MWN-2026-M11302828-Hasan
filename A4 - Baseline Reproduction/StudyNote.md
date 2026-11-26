@@ -179,16 +179,13 @@ FlowMonitor can be used to collect flow statistics, such as the number of transm
 
 Throughput is calculated from the number of bytes received during the observation interval:
 
-\[
-Throughput\ (bps)=\frac{ReceivedBytes \times 8}{T}
-\]
+<img width="366" height="72" alt="1" src="https://github.com/user-attachments/assets/4e83c9bf-3962-4566-b534-749b9dd47e1d" />
+
 
 For a 90-second interval:
 
-\[
-Throughput\ (Mbps)=
-\frac{ReceivedBytes \times 8}{90 \times 10^6}
-\]
+<img width="385" height="67" alt="2" src="https://github.com/user-attachments/assets/285a99e2-9ce7-4f09-9c3d-40b5e9002b8e" />
+
 
 Where:
 
@@ -198,48 +195,15 @@ Where:
 
 ### 6.2 Average End-to-End Delay
 
-\[
-AverageDelay(s)=\frac{DelaySum(s)}{RxPackets}
-\]
+<img width="302" height="62" alt="3" src="https://github.com/user-attachments/assets/43dff113-d95c-4465-82d4-938170124cf0" />
 
 To convert seconds to milliseconds:
 
-\[
-AverageDelay(ms)=
-\frac{DelaySum(s)}{RxPackets}\times1000
-\]
+<img width="390" height="67" alt="4" src="https://github.com/user-attachments/assets/3f111ce6-21d3-43f5-b099-cecc0c026b94" />
+
 
 Average delay can only be calculated when `RxPackets > 0`.
 
-### 6.3 Average Jitter
-
-Using the FlowMonitor jitter-sum definition as the accumulated difference in delay between consecutive packets:
-
-\[
-AverageJitter(s)=
-\frac{JitterSum(s)}{RxPackets-1}
-\]
-
-\[
-AverageJitter(ms)=
-\frac{JitterSum(s)}{RxPackets-1}\times1000
-\]
-
-At least two received packets are required for this calculation. Make sure the same definition is used across all scenarios and is appropriate for the NS-3 version being used.
-
-### 6.4 Packet Loss
-
-\[
-PacketLoss(\%)=
-\frac{TxPackets-RxPackets}{TxPackets}\times100
-\]
-
-Where:
-
-- `TxPackets`: the number of packets transmitted in the flow;
-- `RxPackets`: the number of packets received in the flow.
-
-If `TxPackets = 0`, packet loss must not be calculated by dividing by zero. In addition, the difference between Tx and Rx in FlowMonitor must be interpreted according to the measurement scope and flow behavior.
 
 ## 7. Results and Analysis
 
@@ -247,7 +211,8 @@ The following four graphs are the images uploaded for this documentation. Values
 
 ### 7.1 Throughput versus PHY Data Rate
 
-![Throughput versus PHY Data Rate](images/QoS_Throughput.png)
+<img width="2400" height="1500" alt="QoS_Throughput (1)" src="https://github.com/user-attachments/assets/68385173-fc1e-40df-8725-8e1b94d81157" />
+
 
 **X-axis:** PHY Data Rate (Mbps)  
 **Y-axis:** Throughput (Mbps)
@@ -275,7 +240,8 @@ PHY Data Rate is the transmission speed at the physical layer, whereas throughpu
 
 ### 7.2 Delay versus PHY Data Rate
 
-![Delay versus PHY Data Rate](images/QoS_Delay.png)
+<img width="2400" height="1500" alt="QoS_Delay" src="https://github.com/user-attachments/assets/7d35e275-3106-44a7-af02-8d14c41ea182" />
+
 
 **X-axis:** PHY Data Rate (Mbps)  
 **Y-axis:** Average end-to-end delay (ms)
@@ -292,58 +258,6 @@ The following patterns can be observed in the graph:
 The high delays at 6 and 12 Mbps may be related to queue waiting time when the traffic load approaches or exceeds the effective channel service capacity. When the PHY Data Rate increases, frame transmission time can decrease, potentially allowing queues to be drained more quickly.
 
 **Important warning:** The change from approximately 490–500 ms to almost 0 ms is very sharp. Do not immediately conclude that the delay is actually zero. Check the raw `delaySum` and `rxPackets` values, time units, flow filters, and the way the program generates the graph. A zero value may also result from invalid data, rounding, or selecting the wrong flow.
-
-### 7.3 Jitter versus PHY Data Rate
-
-![Jitter versus PHY Data Rate](images/QoS_Jitter.png)
-
-**X-axis:** PHY Data Rate (Mbps)  
-**Y-axis:** Average jitter (ms)
-
-Approximate values read from the graph:
-
-| STA | 6 Mbps | 12 Mbps | 24 Mbps | 54 Mbps |
-|---|---:|---:|---:|---:|
-| STA 1 – VoIP | 1.25 | 0.59 | 0.34 | 0.27 |
-| STA 2 – Video | 0.98 | 0.60 | 0.53 | 0.44 |
-| STA 3 – Web_STA3 | 0.50 | 0.62 | 0.31 | 0.14 |
-| STA 4 – Web_STA4 | 1.37 | 1.86 | 1.55 | 0.85 |
-
-**Interpretation:**
-
-1. STA 1 jitter decreases as the PHY Data Rate increases across the plotted points.
-2. STA 2 jitter also shows a decreasing trend.
-3. STA 3 jitter increases slightly at 12 Mbps compared with 6 Mbps, then decreases at 24 and 54 Mbps.
-4. STA 4 has the highest jitter among the four STAs in the graph. Its value peaks at approximately 1.86 ms at 12 Mbps, then decreases.
-5. At 54 Mbps, the jitter of all STAs appears lower than their initial values at 6 Mbps.
-
-Jitter does not always decrease monotonically because it is affected by variations in channel-access time, queueing, contention among STAs, and packet arrival patterns. Low jitter means packet arrival times are more consistent; it does not automatically mean that throughput is the highest.
-
-### 7.4 Packet Loss versus PHY Data Rate
-
-![Packet Loss versus PHY Data Rate](images/QoS_Packet_Loss.png)
-
-**X-axis:** PHY Data Rate (Mbps)  
-**Y-axis:** Packet loss (%)
-
-Approximate values read from the graph:
-
-| STA | 6 Mbps | 12 Mbps | 24 Mbps | 54 Mbps |
-|---|---:|---:|---:|---:|
-| STA 1 – VoIP | 0 | 0 | 0 | 0 |
-| STA 2 – Video | 0 | 0 | 0 | 0 |
-| STA 3 – Web_STA3 | 72.5 | 19 | 0 | 0 |
-| STA 4 – Web_STA4 | 79.5 | 24 | 0 | 0 |
-
-**Interpretation:**
-
-1. STA 1 and STA 2 appear to experience no packet loss in any of the displayed scenarios.
-2. STA 3 experiences high packet loss at 6 Mbps, which then decreases at 12 Mbps.
-3. STA 4 shows the highest packet loss at 6 Mbps, followed by a decrease at 12 Mbps.
-4. At 24 and 54 Mbps, packet loss for STA 3 and STA 4 appears to be 0%.
-5. These results are consistent with the hypothesis that the service capacity at lower PHY Data Rates is insufficient to handle the entire offered traffic load.
-
-A packet loss value of 0% in the graph means that no lost packets are visible in the plotted data. Verify that this value comes from correct packet counting and is not caused by an undetected flow or an empty CSV data set.
 
 ## 8. Creating the Graphs with Python
 
@@ -545,12 +459,3 @@ WLAN-QoS-NS3/
     └── plot-qos-results.py
 ```
 
-### How to Upload the Project to GitHub
-
-1. Create a new repository, for example, `WLAN-QoS-NS3`.
-2. Upload `StudyNote.md` to the repository root.
-3. Upload the `images` folder containing the four graphs.
-4. Add the NS-3 source code and Python script if you want the repository to support reproducing the experiment.
-5. Open `StudyNote.md` on GitHub. The graphs will be displayed automatically because the Markdown uses relative paths such as `images/...`.
-
-**Note:** The numerical values in the analysis tables are approximate readings from the graphs. For publication or a final report, replace these values with results calculated from the original CSV/XML files.
